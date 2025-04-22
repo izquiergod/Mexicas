@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Imperio Mexica - Tesoro de Anáhuac</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1 class="title">Imperio <span class="mexica-title">Mexica</span></h1>
+            <p class="subtitle">La grandeza de Tenochtitlán</p>
+        </div>
+        <div class="nahuatl">In Mexihco Tenochtitlan</div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <canvas id="floating-particles"></canvas>
+    </header>
+
+    <nav class="nav">
+        <ul class="nav-list">
+            <li><a href="#historia" class="nav-link">Historia</a></li>
+            <li><a href="#sociedad" class="nav-link">Sociedad</a></li>
+            <li><a href="#religion" class="nav-link">Religión</a></li>
+            <li><a href="#arquitectura" class="nav-link">Arquitectura</a></li>
+            <li><a href="#trivia" class="nav-link">Trivia</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="historia" class="section historia">
+            <div class="section-header">
+                <h2>Historia del Pueblo Mexica</h2>
+                <div class="decorative-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1111</div>
+                    <div class="timeline-content">
+                        <h3>Salida de Aztlán</h3>
+                        <p>Los mexicas parten de su lugar de origen, la mítica Aztlán, en busca de la tierra prometida.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1325</div>
+                    <div class="timeline-content">
+                        <h3>Fundación de Tenochtitlán</h3>
+                        <p>Según la leyenda, encuentran el águila sobre el nopal devorando una serpiente y fundan su ciudad.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1428</div>
+                    <div class="timeline-content">
+                        <h3>Triple Alianza</h3>
+                        <p>Se forma la Triple Alianza con Texcoco y Tlacopan, marcando el inicio del imperio.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1521</div>
+                    <div class="timeline-content">
+                        <h3>Caída de Tenochtitlán</h3>
+                        <p>Después de un largo sitio, la ciudad cae ante los españoles al mando de Cortés.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/fGqPtEQ0xdo?si=9aWCHiFREPBy3lWL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="sociedad" class="section sociedad">
+            <div class="section-header">
+                <h2>Organización Social</h2>
+                <div class="decorative-line"></div>
+            </div>
+            <div class="social-pyramid">
+                <div class="pyramid-level tlatoani">
+                    <div class="level-info">
+                        <h3>Tlatoani</h3>
+                        <p>El gobernante supremo, considerado representante de los dioses en la tierra.</p>
+                    </div>
+                </div>
+                <div class="pyramid-level nobles">
+                    <div class="level-info">
+                        <h3>Pipiltin</h3>
+                        <p>La nobleza, encargada de administrar el imperio y los templos.</p>
+                    </div>
+                </div>
+                <div class="pyramid-level warriors">
+                    <div class="level-info">
+                        <h3>Guerreros</h3>
+                        <p>Clase privilegiada que ganaba estatus según sus capturas en batalla.</p>
+                    </div>
+                </div>
+                <div class="pyramid-level merchants">
+                    <div class="level-info">
+                        <h3>Pochtecas</h3>
+                        <p>Comerciantes que viajaban largas distancias y también espiaban para el imperio.</p>
+                    </div>
+                </div>
+                <div class="pyramid-level commoners">
+                    <div class="level-info">
+                        <h3>Macehualtin</h3>
+                        <p>El pueblo común: agricultores, artesanos y constructores.</p>
+                    </div>
+                </div>
+                <div class="pyramid-level slaves">
+                    <div class="level-info">
+                        <h3>Tlacotin</h3>
+                        <p>Esclavos, generalmente por deudas o castigos, no por nacimiento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="religion" class="section religion">
+            <div class="section-header">
+                <h2>Religión y Mitología</h2>
+                <div class="decorative-line"></div>
+            </div>
+            <div class="gods-gallery">
+                <div class="god-card">
+                    <div class="god-image huitzilopochtli"></div>
+                    <div class="god-info">
+                        <h3>Huitzilopochtli</h3>
+                        <p>Dios del sol y la guerra, patrón de los mexicas.</p>
+                        <button class="god-details">Ver más</button>
+                    </div>
+                </div>
+                <div class="god-card">
+                    <div class="god-image tlaloc"></div>
+                    <div class="god-info">
+                        <h3>Tláloc</h3>
+                        <p>Dios de la lluvia, fertilidad y relámpagos.</p>
+                        <button class="god-details">Ver más</button>
+                    </div>
+                </div>
+                <div class="god-card">
+                    <div class="god-image quetzalcoatl"></div>
+                    <div class="god-info">
+                        <h3>Quetzalcóatl</h3>
+                        <p>La serpiente emplumada, dios del viento y la sabiduría.</p>
+                        <button class="god-details">Ver más</button>
+                    </div>
+                </div>
+                <div class="god-card">
+                    <div class="god-image tezcatlipoca"></div>
+                    <div class="god-info">
+                        <h3>Tezcatlipoca</h3>
+                        <p>Espejo humeante, dios de la noche y la hechicería.</p>
+                        <button class="god-details">Ver más</button>
+                    </div>
+                </div>
+            </div>
+            <div class="calendar-container">
+                <div class="aztec-calendar">
+                    <div class="calendar-image"></div>
+                    <div class="calendar-info">
+                        <h3>Piedra del Sol</h3>
+                        <p>El famoso calendario mexica que representa la cosmovisión de este pueblo.</p>
+                        <p>Contiene el ciclo solar de 365 días (xiuhpohualli) y el ciclo ritual de 260 días (tonalpohualli).</p>
+                        <button id="explore-calendar">Explorar Calendario</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal del Calendario -->
+            <div class="modal" id="calendar-modal">
+                <div class="modal-content calendar-modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2>Explorando la Piedra del Sol</h2>
+                    <div class="calendar-zoom-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Piedra_del_Sol.png/1024px-Piedra_del_Sol.png" 
+                             alt="Calendario Azteca" 
+                             class="zoomable-calendar"
+                             id="zoomable-calendar">
+                    </div>
+                    <div class="calendar-info-modal">
+                        <h3>Partes del Calendario</h3>
+                        <ul class="calendar-parts">
+                            <li data-part="center">Tonatiuh - Dios Sol</li>
+                            <li data-part="ring1">Los 4 Soles anteriores</li>
+                            <li data-part="ring2">Los 20 días del mes</li>
+                            <li data-part="ring3">Símbolos estelares</li>
+                            <li data-part="outer">Serpientes de fuego</li>
+                        </ul>
+                        <div class="calendar-part-info" id="calendar-part-info">
+                            <p>Selecciona una parte del calendario para aprender más sobre ella.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="arquitectura" class="section arquitectura">
+            <div class="section-header">
+                <h2>Arquitectura y Ciudad</h2>
+                <div class="decorative-line"></div>
+            </div>
+            <div class="tenochtitlan-model">
+                <div class="model-info">
+                    <h3>Tenochtitlán: La Venecia del Nuevo Mundo</h3>
+                    <p>Construida sobre el lago Texcoco, la ciudad contaba con:</p>
+                    <ul>
+                        <li>Calzadas que conectaban con tierra firme</li>
+                        <li>Acueductos para agua dulce</li>
+                        <li>Canales para transporte</li>
+                        <li>Edificios pintados de rojo y blanco</li>
+                        <li>El gran Templo Mayor en el centro ceremonial</li>
+                    </ul>
+                </div>
+                <div class="model-view">
+                    <div class="city-image"></div>
+                    <div class="zoom-controls">
+                        <button class="zoom-in"><i class="fas fa-search-plus"></i></button>
+                        <button class="zoom-out"><i class="fas fa-search-minus"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="templo-mayor">
+                <h3>Templo Mayor</h3>
+                <div class="templo-slider">
+                    <div class="slide active" data-id="1"></div>
+                    <div class="slide" data-id="2"></div>
+                    <div class="slide" data-id="3"></div>
+                    <div class="slide-nav">
+                        <button class="slide-prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slide-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="templo-info">
+                    <p>El Huey Teocalli era el centro del universo mexica, con dos templos en su cima dedicados a Tláloc y Huitzilopochtli.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="trivia" class="section trivia">
+            <div class="section-header">
+                <h2>Pon a prueba tu conocimiento</h2>
+                <div class="decorative-line"></div>
+            </div>
+            <div class="trivia-container">
+                <div class="trivia-question">
+                    <h3 id="question-text">¿En qué año fue fundada Tenochtitlán según la tradición mexica?</h3>
+                    <div class="trivia-options">
+                        <button class="trivia-option">1200</button>
+                        <button class="trivia-option">1325</button>
+                        <button class="trivia-option">1428</button>
+                        <button class="trivia-option">1521</button>
+                    </div>
+                </div>
+                <div class="trivia-result">
+                    <div class="result-icon"></div>
+                    <p id="result-text"></p>
+                    <button id="next-question" class="btn-next">Siguiente Pregunta</button>
+                </div>
+                <div class="trivia-score">
+                    <h3>Tu puntuación</h3>
+                    <div class="score-display">0/10</div>
+                    <div class="score-bar"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Explora más</h4>
+                <ul>
+                    <li><a href="https://www.inah.gob.mx/" target="_blank">INAH</a></li>
+                    <li><a href="https://www.mna.inah.gob.mx/" target="_blank">Museo Nacional de Antropología</a></li>
+                    <li><a href="https://www.templomayor.inah.gob.mx/" target="_blank">Templo Mayor</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Fuentes</h4>
+                <ul>
+                    <li>Códices prehispánicos</li>
+                    <li>Crónicas de la Conquista</li>
+                    <li>Investigaciones arqueológicas</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Con respeto a</h4>
+                <p>Los pueblos originarios de México y sus descendientes.</p>
+                <div class="nahuatl-footer">Ma timoyolcuitlahui in tonantin in totahtin</div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 - Honrando la cultura mexica</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="god-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-god-name"></h2>
+            <div id="modal-god-image"></div>
+            <p id="modal-god-description"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

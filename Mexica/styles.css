@@ -1,0 +1,1040 @@
+/* Variables y estilos base */
+:root {
+    --primary-color: #8B3A2D;
+    --secondary-color: #D4A76A;
+    --accent-color: #E8C39E;
+    --dark-color: #1A1A1A;
+    --light-color: #F5F5F5;
+    --text-color: #333;
+    --text-light: #777;
+    --font-main: 'Quicksand', sans-serif;
+    --font-heading: 'Noto Serif', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--light-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+.header {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://historia.nationalgeographic.com.es/medio/2021/01/16/fundacion-de-tenochtitlan_c8a146e6.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    z-index: 2;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.title {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.mexica-title {
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.nahuatl {
+    font-style: italic;
+    margin-top: 1rem;
+    opacity: 0.8;
+    z-index: 2;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Navegación */
+.nav {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-link {
+    color: white;
+    padding: 0.5rem 1.5rem;
+    margin: 0 0.5rem;
+    font-weight: 600;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Secciones generales */
+.section {
+    padding: 5rem 10%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.decorative-line {
+    height: 3px;
+    width: 100px;
+    background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
+    margin: 0 auto;
+}
+
+/* Historia */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 3rem auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: var(--secondary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 3px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -12px;
+    background-color: var(--light-color);
+    border: 4px solid var(--primary-color);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -12px;
+}
+
+.timeline-year {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.timeline-content {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.timeline-content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.video-container {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.video-container iframe {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Sociedad */
+.social-pyramid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pyramid-level {
+    width: 100%;
+    padding: 1.5rem;
+    margin: 0.3rem 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pyramid-level:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.pyramid-level::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: var(--secondary-color);
+}
+
+.tlatoani { width: 90%; background-color: #5E2C20; color: white; }
+.nobles { width: 85%; background-color: #7A3A2B; color: white; }
+.warriors { width: 80%; background-color: #8B3A2D; color: white; }
+.merchants { width: 75%; background-color: #9D4A3F; }
+.commoners { width: 70%; background-color: #B07A6B; }
+.slaves { width: 65%; background-color: #D4A76A; }
+
+.level-info h3 {
+    margin-bottom: 0.5rem;
+    color: inherit;
+}
+
+/* Religión */
+.gods-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.god-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.god-card:hover {
+    transform: translateY(-10px);
+}
+
+.god-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.huitzilopochtli { background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/3e/Huitzilopochtli_V.png'); }
+.tlaloc { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Tlaloc_glyph.svg/800px-Tlaloc_glyph.svg.png'); }
+.quetzalcoatl { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Quetzalcoatl.svg/800px-Quetzalcoatl.svg.png'); }
+.tezcatlipoca { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Tezcatlipoca.svg/800px-Tezcatlipoca.svg.png'); }
+
+.god-info {
+    padding: 1.5rem;
+}
+
+.god-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.god-details {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.god-details:hover {
+    background-color: #6B2A1F;
+}
+
+/* https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Piedra_del_Sol.png/1024px-Piedra_del_Sol.png*/
+
+/* Estilos para la sección del calendario */
+.calendar-container {
+    margin-top: 4rem;
+}
+
+.aztec-calendar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-image {
+    flex: 1;
+    min-height: 300px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Piedra_del_Sol.png/1024px-Piedra_del_Sol.png') center/cover no-repeat;
+    transition: transform 0.3s ease;
+}
+
+.calendar-image:hover {
+    transform: scale(1.02);
+}
+
+.calendar-info {
+    flex: 1;
+    padding: 2rem;
+}
+
+.calendar-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.calendar-info p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+#explore-calendar {
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#explore-calendar:hover {
+    background-color: #C0955D;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#explore-calendar::before {
+    font-size: 1.2rem;
+}
+
+/* Estilos para el modal del calendario */
+.calendar-modal-content {
+    max-width: 900px;
+    width: 90%;
+    padding: 2.5rem;
+    background-color: white;
+    border-radius: 12px;
+    position: relative;
+}
+
+.calendar-modal-content h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.calendar-zoom-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--accent-color);
+}
+
+.zoomable-calendar {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.zoomable-calendar.zoomed {
+    transform: scale(1.8);
+    cursor: grab;
+}
+
+.calendar-info-modal {
+    background-color: rgba(212, 167, 106, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.calendar-info-modal h3 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.calendar-parts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.calendar-parts li {
+    padding: 0.7rem 1.2rem;
+    background-color: var(--accent-color);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+    list-style: none;
+}
+
+.calendar-parts li:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-parts li.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.calendar-part-info {
+    padding: 1.2rem;
+    background-color: white;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    min-height: 80px;
+}
+
+.calendar-part-info p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Arquitectura */
+.tenochtitlan-model {
+    display: flex;
+    gap: 3rem;
+    margin: 3rem 0;
+}
+
+.model-info {
+    flex: 1;
+}
+
+.model-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.model-info ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+.model-info li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.model-info li::before {
+    content: '•';
+    color: var(--secondary-color);
+    font-weight: bold;
+    position: absolute;
+    left: -1rem;
+}
+
+.model-view {
+    flex: 1;
+    position: relative;
+}
+
+.city-image {
+    height: 400px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/El_templo_mayor_en_Tenochtitlan.png/1280px-El_templo_mayor_en_Tenochtitlan.png') center/cover no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.zoom-controls {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.zoom-in, .zoom-out {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.zoom-in:hover, .zoom-out:hover {
+    background-color: white;
+    transform: scale(1.1);
+}
+
+.templo-mayor {
+    margin-top: 4rem;
+}
+
+.templo-mayor h3 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.templo-slider {
+    position: relative;
+    height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide[data-id="1"] { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Model_of_Tenochtitlan.jpg/1920px-Model_of_Tenochtitlan.jpg'); }
+.slide[data-id="2"] { background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/04/Partial_view_Templo_Mayor.jpg'); }
+.slide[data-id="3"] { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Templo_Mayor_2015_001.jpg/1920px-Templo_Mayor_2015_001.jpg'); }
+
+.slide-nav {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+}
+
+.slide-prev, .slide-next {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slide-prev:hover, .slide-next:hover {
+    background-color: white;
+    transform: scale(1.1);
+}
+
+.templo-info {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-style: italic;
+    color: var(--text-light);
+}
+
+/* Trivia */
+.trivia-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.trivia-question h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.trivia-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.trivia-option {
+    padding: 1rem;
+    background-color: var(--light-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.trivia-option:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.trivia-result {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.score-display {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.result-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.trivia-result small {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.result-icon i {
+    display: block;
+}
+
+#result-text {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+#next-question {
+    padding: 0.8rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+#next-question:hover {
+    background-color: #6B2A1F;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.trivia-score {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.trivia-score h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.score-display {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.score-bar {
+    height: 10px;
+    background-color: var(--light-color);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.score-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0;
+    background-color: var(--secondary-color);
+    transition: width 1s ease;
+}
+
+#next-question {
+    padding: 0.7rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#next-question:hover {
+    background-color: #6B2A1F;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 3rem 10% 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.nahuatl-footer {
+    font-style: italic;
+    margin-top: 1rem;
+    opacity: 0.7;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalFadeIn 0.5s ease;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--primary-color);
+}
+
+#modal-god-name {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#modal-god-image {
+    height: 200px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 1rem 0;
+}
+
+#modal-god-description {
+    line-height: 1.7;
+}
+
+/* Animaciones y efectos */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-20px) translateX(-50%); }
+    60% { transform: translateY(-10px) translateX(-50%); }
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Partículas flotantes */
+#floating-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Efectos hover avanzados */
+.god-card:hover .god-image {
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+}
+
+.god-card .god-image {
+    transition: transform 0.5s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .section {
+        padding: 4rem 5%;
+    }
+
+    .title {
+        font-size: 3.5rem;
+    }
+
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .timeline-item::after {
+        left: 18px;
+    }
+
+    .timeline-item:nth-child(even)::after {
+        left: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tenochtitlan-model {
+        flex-direction: column;
+    }
+
+    .aztec-calendar {
+        flex-direction: column;
+    }
+
+    .calendar-image {
+        min-height: 200px;
+    }
+
+    .trivia-options {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+    }
+
+    .nav-link {
+        padding: 0.5rem 1rem;
+        margin: 0.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .gods-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
